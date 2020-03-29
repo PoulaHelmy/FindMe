@@ -19,7 +19,6 @@ class CreateQuestionresponsesTable extends Migration
             $table->string('question');
             $table->string('answer');
             $table->timestamps();
-
         });
     }
 
