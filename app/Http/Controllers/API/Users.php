@@ -21,7 +21,7 @@ class Users extends Controller
     public function show(User $user)
     {
         $data=['data'=>$user];
-        
+
         return response()->json($data, 200);
     }
 }
