@@ -15,6 +15,8 @@ class CreateInputablesTable extends Migration
     {
         Schema::create('inputables', function (Blueprint $table) {
             $table->id();
+            $table->integer('input_id');
+            $table->morphs('inputable');
             $table->timestamps();
         });
     }

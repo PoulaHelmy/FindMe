@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['sec','photoable_type','photoable_id'];
 }

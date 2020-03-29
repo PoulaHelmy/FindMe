@@ -15,6 +15,9 @@ class CreateSubcatsTable extends Migration
     {
         Schema::create('subcats', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('meta_keywords')->nullable()->default(null);
+            $table->string('meta_des')->nullable()->default(null);
             $table->timestamps();
         });
     }
