@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 
 class ApiHome extends Controller

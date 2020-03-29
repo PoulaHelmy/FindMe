@@ -15,6 +15,8 @@ class CreateSubcatablesTable extends Migration
     {
         Schema::create('subcatables', function (Blueprint $table) {
             $table->id();
+            $table->integer('subcat_id');
+            $table->morphs('subcatable');
             $table->timestamps();
         });
     }

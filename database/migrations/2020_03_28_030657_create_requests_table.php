@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategorieablesTable extends Migration
+class CreateRequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class CreateCategorieablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorieables', function (Blueprint $table) {
+        Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->text('des');
+            $table->boolean('status',['0','1'])->default('0');
             $table->timestamps();
+
         });
     }
 
@@ -26,6 +32,6 @@ class CreateCategorieablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorieables');
+        Schema::dropIfExists('requests');
     }
 }

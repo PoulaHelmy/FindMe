@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubCategory extends Model
 {
-    protected $fillable = ['name'];
+    protected $table='subcats';
+    protected $fillable = ['name','meta_keywords','des'];
 }
