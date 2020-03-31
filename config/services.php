@@ -29,5 +29,33 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'facebook' => [
+        'client_id' => env('FACEBOOK_KEY'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI')
+    ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_CALLBACK_URL'),
+    ],
+    'linkedin' => [
+        'client_id' => env('LINKEDIN_KEY'),
+        'client_secret' => env('LINKEDIN_SECRET'),
+        'redirect' => env('LINKEDIN_REDIRECT_URI')
+    ],
+    'twitter' => [
+        'client_id' => env('twitter_client_id'),
+        'client_secret' => env('twitter_client_secret'),
+        'redirect' => env('twitter_callback'),
+    ],
 ];
+
+//    'facebook' => [
+//        'client_id' => env('FACEBOOK_APP_ID'),
+//        'client_secret' => env('GITHUB_APP_SECRET'),
+//        'redirect' => env('FACEBOOK_REDIRECT_URI'),
+//    ],
+//app id  1052447848464710
+//secret edd63512cd511e7929b7f8e81316d8d5
+//https://localhost:8000/login/facebook/callback
