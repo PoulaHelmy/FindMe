@@ -19,9 +19,8 @@ class CreateRequestsTable extends Migration
             $table->integer('user_id');
             $table->integer('item_id');
             $table->text('des');
-            $table->boolean('status',['0','1'])->default('0');
+            $table->boolean('status', ['0','1'])->default('0');
             $table->timestamps();
-
         });
     }
 

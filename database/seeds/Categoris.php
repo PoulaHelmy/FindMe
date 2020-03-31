@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+
 class Categoris extends Seeder
 {
     /**
@@ -13,7 +14,7 @@ class Categoris extends Seeder
     {
         $faker = Faker::create();
 
-        for($i = 0 ;$i< 10 ;$i++){
+        for ($i = 0 ;$i< 10 ;$i++) {
             $array = [
                 'name' => $faker->word,
                 'meta_keywords' => $faker->name,

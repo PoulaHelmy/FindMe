@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+
 class Items extends Seeder
 {
     /**
@@ -14,7 +15,7 @@ class Items extends Seeder
         $faker = Faker::create();
         $ids = [1,2,3,4,5,6,7,8,9];
 
-        for($i = 0 ;$i< 10 ;$i++){
+        for ($i = 0 ;$i< 10 ;$i++) {
             $array = [
                 'name' => $faker->word,
                 'des' => $faker->paragraph,
@@ -23,8 +24,6 @@ class Items extends Seeder
             ];
             $item = \App\Models\Item::create($array);
             $photo='images/I4Srgioo0c5zUU6t5rnjj1ZSxULV4JgQ4nTJU3SG.jpeg';
-
-
         }
     }
 }

@@ -12,16 +12,16 @@ class Users extends Controller
     {
 //        $this->middleware('auth:api');
     }
-    public function index(){
+    public function index()
+    {
         $data=User::all();
-        return response()->json($data,200);
+        return response()->json($data, 200);
     }
 
-    public function show(User $user){
+    public function show(User $user)
+    {
         $data=['data'=>$user];
-        
-        return response()->json($data,200);
+
+        return response()->json($data, 200);
     }
-
-
 }
