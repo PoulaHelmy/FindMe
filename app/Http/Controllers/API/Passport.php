@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
@@ -12,6 +11,7 @@ use App\Notifications\SignupActivate;
 use Illuminate\Support\Facades\Storage;
 
 use Avatar;
+
 class Passport extends ApiHome
 {
     public function __construct(User $model)
@@ -30,24 +30,26 @@ class Passport extends ApiHome
         $credentials = request(['email', 'password']);
         $credentials['active'] = 1;
         $credentials['deleted_at'] = null;
-        if(!auth()->attempt($credentials))
-            return $this->sendError('Unauthorized',400);
+        if (!auth()->attempt($credentials)) {
+            return $this->sendError('Unauthorized', 400);
+        }
         $user = $request->user();
         $success['token'] =  $user->createToken('Personal Access Token')-> accessToken;
         $success['name'] =  $user->name;
-        return $this->sendResponse($success,'Success Login Operation');
-
+        return $this->sendResponse($success, 'Success Login Operation');
     }//end of login
 
-    public function signup(Request $request){
+    public function signup(Request $request)
+    {
         $v = validator($request->only('email', 'name', 'password'), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
-        if ($v->fails())
-            return $this->sendError('Validation Error.!',$v->errors()->all(),400);
+        if ($v->fails()) {
+            return $this->sendError('Validation Error.!', $v->errors()->all(), 400);
+        }
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -59,12 +61,12 @@ class Passport extends ApiHome
         $user->notify(new SignupActivate($user));
         $success['token'] = $user->createToken('FindMe')->accessToken;
         $success['name'] =  $user->name;
-        return $this->sendResponse($success,'Successfully created user!');
+        return $this->sendResponse($success, 'Successfully created user!');
     }//end of register
 
     public function details()
     {
-        return  $this->sendResponse(['user' => auth()->user()],'Success To Retrieve the current Auth User Data');
+        return  $this->sendResponse(['user' => auth()->user()], 'Success To Retrieve the current Auth User Data');
     }//end of details
     public function update(Request $request)
     {
@@ -74,42 +76,42 @@ class Passport extends ApiHome
             'password' => 'string|min:6',
         ]);
 
-        if ($v->fails())
-            return $this->sendError('Validation Error.!',$v->errors()->all(),400);
-        if(!auth()->user())
-            return $this->sendError('Unauthorized',400);
+        if ($v->fails()) {
+            return $this->sendError('Validation Error.!', $v->errors()->all(), 400);
+        }
+        if (!auth()->user()) {
+            return $this->sendError('Unauthorized', 400);
+        }
         $requestArray = $request->all();
-        if(isset($requestArray['password']) && $requestArray['password'] != ""){
+        if (isset($requestArray['password']) && $requestArray['password'] != "") {
             $requestArray['password'] =  Hash::make($requestArray['password']);
-        }else{
+        } else {
             unset($requestArray['password']);
         }
 
         $user=auth()->user()->update($requestArray);
         $success['name'] =  auth()->user()->name;
         $success['email'] =  auth()->user()->email;
-        return $this->sendResponse($success,'Successfully created user!');
-
-
+        return $this->sendResponse($success, 'Successfully created user!');
     }
 
     public function logout(Request $request)
     {
         $request->user()->token()->revoke();
         $request->user()->token()->delete();
-        return $this->sendResponse(null,'Successfully Loged OUT user!');
+        return $this->sendResponse(null, 'Successfully Loged OUT user!');
     }//end of logout
 
     public function SignupActivate($token)
     {
         $user = User::where('activation_token', $token)->first();
-        if (!$user)
-            return $this->sendError('This activation token is invalid.!',404);
+        if (!$user) {
+            return $this->sendError('This activation token is invalid.!', 404);
+        }
 
         $user->active = true;
         $user->activation_token = '';
         $user->save();
         return $user;
     }//end of signupActivate
-
 }//enf of controller

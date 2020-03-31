@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Socialite;
 use App\SocialAccountService;
+
 class SocialAccountController extends Controller
 {
     /**
@@ -26,7 +27,7 @@ class SocialAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback(SocialAccountService $ProfileService,$provider)
+    public function handleProviderCallback(SocialAccountService $ProfileService, $provider)
     {
 
 
@@ -35,26 +36,21 @@ class SocialAccountController extends Controller
 
             //$user = Socialite::driver($provider)->user();
             $user = Socialite::driver($provider)->user();
-
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->to('login');
         }
 
-        $user = $this->createUser($user,$provider);
+        $user = $this->createUser($user, $provider);
 
-        auth()->login($user->user,true);
+        auth()->login($user->user, true);
 
         return redirect()->to('home');
-
-
-
-
     }
 
 
 
-    function createUser($getInfo,$provider){
-
+    public function createUser($getInfo, $provider)
+    {
         $user = SocialAccount::where('provider_id', $getInfo->id)->first();
 
         if (!$user) {
@@ -67,19 +63,7 @@ class SocialAccountController extends Controller
             $acc->provider_id=$getInfo->id;
             $acc->provider_name=$provider;
             $user->accounts()->save($acc);
-
-
         }
         return $user;
     }
-
-
-
-
-
-
-
-
-
-
 }//end of controller

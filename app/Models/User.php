@@ -9,6 +9,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Storage;
 use App\Models\SocialAccount;
+
 class User extends Authenticatable
 {
     use Notifiable,HasApiTokens,SoftDeletes;
@@ -47,23 +48,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function accounts(){
+    public function accounts()
+    {
         return $this->hasMany(SocialAccount::class);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

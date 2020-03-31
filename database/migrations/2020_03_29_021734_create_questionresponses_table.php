@@ -21,7 +21,6 @@ class CreateQuestionresponsesTable extends Migration
             $table->timestamps();
 
             $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
-
         });
     }
 

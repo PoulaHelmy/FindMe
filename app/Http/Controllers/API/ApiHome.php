@@ -2,13 +2,16 @@
 
 
 namespace App\Http\Controllers\API;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
+
 class ApiHome extends Controller
 {
     protected $model;
-    public function __construct(Model $model){
+    public function __construct(Model $model)
+    {
         return $this->model=$model;
     }//end of constructor
 
@@ -28,26 +31,27 @@ class ApiHome extends Controller
             'success' => false,
             'message' => $error,
         ];
-        if(!empty($errorMessages)){
+        if (!empty($errorMessages)) {
             $response['data'] = $errorMessages;
         }
         return response()->json($response, $code);
     }//end of senderrors
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $rows=$this->model->latest()->paginate(10);
-        if($rows->count()>=0)
-            return $this->sendResponse($rows,'Success');
-        return $this->sendError('SomeThig Wrong',400);
+        if ($rows->count()>=0) {
+            return $this->sendResponse($rows, 'Success');
+        }
+        return $this->sendError('SomeThig Wrong', 400);
     }//end of index
 
-    public function show($id){
+    public function show($id)
+    {
         $row=$this->model->find($id);
-        if($row)
-            return $this->sendResponse($row,'Success Retrieve Item ');
-        return $this->sendError('Not Found',400);
+        if ($row) {
+            return $this->sendResponse($row, 'Success Retrieve Item ');
+        }
+        return $this->sendError('Not Found', 400);
     }
-
-
-
 }//end of controller

@@ -31,5 +31,4 @@ class Store extends FormRequest
             'meta_des' => ['max:191'],
         ];
     }
-
 }

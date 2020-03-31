@@ -19,13 +19,12 @@ class CreateRequestsTable extends Migration
             $table->unsignedBigInteger('item_id');
             $table->string('name');
             $table->text('des');
-            $table->boolean('status',['0','1'])->default('0');
+            $table->boolean('status', ['0','1'])->default('0');
             $table->timestamps();
 
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
         });
     }
 
