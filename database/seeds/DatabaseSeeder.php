@@ -13,12 +13,12 @@ class DatabaseSeeder extends Seeder
     {
          $this->call([
 
-          //   Users::class,
-           // Items::class,
-           // Categoris::class,
-            SubCategoris::class,
-            //Inputs::class,
-             //Tags::class
+            // Users::class,
+          //  Items::class,
+            Categoris::class,
+//            SubCategoris::class,
+//            Inputs::class,
+//             Tags::class
 
 
 

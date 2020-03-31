@@ -15,10 +15,13 @@ class CreateItemvaluesTable extends Migration
     {
         Schema::create('itemvalues', function (Blueprint $table) {
             $table->id();
-            $table->integer('item_id');
+            $table->unsignedBigInteger('item_id');
             $table->string('name');
             $table->string('value');
             $table->timestamps();
+
+
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
 
         });
 

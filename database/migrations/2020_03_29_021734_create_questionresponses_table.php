@@ -15,10 +15,12 @@ class CreateQuestionresponsesTable extends Migration
     {
         Schema::create('questionresponses', function (Blueprint $table) {
             $table->id();
-            $table->integer('request_id');
+            $table->unsignedBigInteger('request_id');
             $table->string('question');
             $table->string('answer');
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
 
         });
     }

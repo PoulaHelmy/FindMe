@@ -15,12 +15,16 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('item_id');
             $table->string('name');
-            $table->integer('user_id');
-            $table->integer('item_id');
             $table->text('des');
             $table->boolean('status',['0','1'])->default('0');
             $table->timestamps();
+
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

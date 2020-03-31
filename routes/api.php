@@ -14,9 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('login', 'API\Passport@login');
+    Route::post('signup', 'API\Passport@signup');
+    Route::get('signup/activate/{token}', 'API\Passport@signupActivate');
+
+    Route::group(['middleware' => 'auth:api'], function() {
+        Route::get('user', 'API\Passport@details');
+        Route::get('logout', 'API\Passport@logout');
+        Route::post('update', 'API\Passport@update');
+    });
 });
-Route::get('user-list','API\Users@getUsersList');
-Route::get('profile','API\Users@getProfile');
-Route::resource('users','API\Users');
+Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function () {
+    Route::post('create', 'API\PasswordResetController@create');
+    Route::get('find/{token}', 'API\PasswordResetController@find');
+    Route::post('reset', 'API\PasswordResetController@reset');
+});
+Route::resource('categories','API\CategoryApi');
+Route::post('categories/id',function ($id){
+   $name="TOOOOOOOTA";
+   $cat=\App\Models\Category::find($id);
+   $cat->name=$name;
+   $cat->save();
+   dd($cat);
+});

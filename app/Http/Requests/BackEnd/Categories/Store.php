@@ -3,6 +3,7 @@
 namespace App\Http\Requests\BackEnd\Categories;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\ValidationException;
 
 class Store extends FormRequest
 {
@@ -25,7 +26,10 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required','min:3', 'max:191','string','unique:categories'],
+            'meta_keywords' => ['max:191'],
+            'meta_des' => ['max:191'],
         ];
     }
+
 }
