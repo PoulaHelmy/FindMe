@@ -14,7 +14,8 @@ use Illuminate\Support\Str;
 
 class PasswordResetController extends ApiHome
 {
-    public function __construct(User $model){
+    public function __construct(User $model)
+    {
         parent::__construct($model);
     }//end of constructor
     public function create(Request $request)
@@ -23,16 +24,18 @@ class PasswordResetController extends ApiHome
             'email' => 'required|string|email',
         ]);
         $user = User::where('email', $request->email)->first();
-        if (!$user)
-            return $this->sendError('We can\'t find a user with that e-mail address',404);
+        if (!$user) {
+            return $this->sendError('We can\'t find a user with that e-mail address', 404);
+        }
 
         $passwordReset = PasswordReset::updateOrCreate(
             ['email' => $user->email],
-            ['email' => $user->email, 'token' => Str::random(60)]);
-        if ($user && $passwordReset)
+            ['email' => $user->email, 'token' => Str::random(60)]
+        );
+        if ($user && $passwordReset) {
             $user->notify(new PasswordResetRequest($passwordReset->token));
-        return $this->sendResponse(null,'We have e-mailed your password reset link!');
-
+        }
+        return $this->sendResponse(null, 'We have e-mailed your password reset link!');
     }//end of create
 
     /**
@@ -47,27 +50,28 @@ class PasswordResetController extends ApiHome
     public function find($token)
     {
         $passwordReset = PasswordReset::where('token', $token)->first();
-        if (!$passwordReset)
-            return $this->sendError('This password reset token is invalid.',404);
+        if (!$passwordReset) {
+            return $this->sendError('This password reset token is invalid.', 404);
+        }
 
         if (Carbon::parse($passwordReset->updated_at)->addMinutes(720)->isPast()) {
             $passwordReset->delete();
-            return $this->sendError('This password reset token is invalid.',404);
+            return $this->sendError('This password reset token is invalid.', 404);
         }
-        return $this->sendResponse($passwordReset,'Success');
+        return $this->sendResponse($passwordReset, 'Success');
     }//end of find
 
 
-     /**
-     * Reset password
-     *
-     * @param  [string] email
-     * @param  [string] password
-     * @param  [string] password_confirmation
-     * @param  [string] token
-     * @return [string] message
-     * @return [json] user object
-     */
+    /**
+    * Reset password
+    *
+    * @param  [string] email
+    * @param  [string] password
+    * @param  [string] password_confirmation
+    * @param  [string] token
+    * @return [string] message
+    * @return [json] user object
+    */
 
 
     public function reset(Request $request)
@@ -81,20 +85,19 @@ class PasswordResetController extends ApiHome
             ['token', $request->token],
             ['email', $request->email]
         ])->first();
-        if (!$passwordReset)
-            return $this->sendError('This password reset token is invalid.',404);
+        if (!$passwordReset) {
+            return $this->sendError('This password reset token is invalid.', 404);
+        }
 
         $user = User::where('email', $passwordReset->email)->first();
-        if (!$user)
-            return $this->sendError('We can\'t find a user with that e-mail address.',404);
+        if (!$user) {
+            return $this->sendError('We can\'t find a user with that e-mail address.', 404);
+        }
 
         $user->password = Hash::make($request->password);
         $user->save();
         $passwordReset->delete();
         $user->notify(new PasswordResetSuccess($passwordReset));
-        return $this->sendResponse($user,'Success');
+        return $this->sendResponse($user, 'Success');
     }//end of reset
-
-
-
 }//end of controller

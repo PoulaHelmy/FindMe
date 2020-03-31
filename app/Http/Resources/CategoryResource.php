@@ -4,10 +4,11 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Models\Category;
+
 class CategoryResource extends JsonResource
 {
-
-    public function toArray($request){
+    public function toArray($request)
+    {
 
        //return parent::toArray($request);
         return [
@@ -16,8 +17,5 @@ class CategoryResource extends JsonResource
             'meta_description'   =>$this->meta_des,
             'meta_keywords'  =>$this->meta_keywords
         ];
-
     }
-
-
 }

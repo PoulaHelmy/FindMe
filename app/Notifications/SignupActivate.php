@@ -46,7 +46,6 @@ class SignupActivate extends Notification
             ->line('Thanks for signup! Please before you begin, you mustconfirm your account.')
             ->action('Confirm Account', url($url))
             ->line('Thank you for using our application!');
-
     }
 
     /**
