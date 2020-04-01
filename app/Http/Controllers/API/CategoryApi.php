@@ -19,17 +19,17 @@ class CategoryApi extends ApiHome
     }//endof index
 
     public function store(Store $request){
-        $cat=Category::create($request->all());
-        return $this->sendResponse(new CategoryResource($cat),'Created Successfully');
+        $row=Category::create($request->all());
+        return $this->sendResponse(new CategoryResource($row),'Created Successfully');
     }//end of store
 
 
     public function update(Store $request,$id){
-        $cat=$this->model->find($id);
-        if(!$cat)
+        $row=$this->model->find($id);
+        if(!$row)
             return $this->sendError('This Category Not Found',400);
-       $cat->update($request->all());
-        return$this->sendResponse(new CategoryResource($cat),'Category Updated Successfully');
+        $row->update($request->all());
+        return$this->sendResponse(new CategoryResource($row),'Category Updated Successfully');
     }//end of update
 
 

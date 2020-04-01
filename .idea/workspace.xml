@@ -3,19 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee5679d2-2734-4551-bf55-8b22284d366e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ApiHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ApiHome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/SubCategories/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/SubCategories/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SubCategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SubCategoryResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_27_030344_create_subcats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_27_030344_create_subcats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_31_052659_create_prepare_users_table_for_social_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_31_052659_create_prepare_users_table_for_social_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SubCategoris.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SubCategoris.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Inputs/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Inputs/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +189,7 @@
       <workItem from="1585630729379" duration="8734000" />
       <workItem from="1585647433308" duration="9377000" />
       <workItem from="1585661815406" duration="8713000" />
-      <workItem from="1585709522756" duration="4199000" />
+      <workItem from="1585709522756" duration="4925000" />
     </task>
     <servers />
   </component>
@@ -214,11 +205,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606259393" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585713620101">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585714138273">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1585687874003" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585713620101" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585714138273" />
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606076463" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1585612338014">
       <screen x="0" y="0" width="1366" height="738" />
@@ -228,11 +219,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585593776799" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585712365651">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585714479352">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1585640256127" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585712365651" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585714479352" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1585606619875" />
   </component>
 </project>

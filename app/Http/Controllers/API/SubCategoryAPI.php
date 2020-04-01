@@ -20,18 +20,18 @@ class SubCategoryAPI extends ApiHome
     }//end of index
 
     public function store(Store $request){
-        $subcat=SubCategory::create($request->all());
-        return $this->sendResponse(new SubCategoryResource($subcat),'Created Successfully');
+        $row=SubCategory::create($request->all());
+        return $this->sendResponse(new SubCategoryResource($row),'Created Successfully');
     }//end of store
 
-    //There is Problem in updating
+
     public function update(Update $request,$id){
 
-        $subcat=$this->model->find($id);
-        if(!$subcat)
+        $row=$this->model->find($id);
+        if(!$row)
             return $this->sendError('This SubCategory Not Found',400);
-        $subcat->update($request->all());
-        return$this->sendResponse(new SubCategoryResource($subcat),'SubCategory Updated Successfully');
+        $row->update($request->all());
+        return$this->sendResponse(new SubCategoryResource($row),'SubCategory Updated Successfully');
 
 
     }//end of update

@@ -32,6 +32,7 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function () {
 });
 Route::resource('categories','API\CategoryApi');
 Route::resource('subcategories','API\SubCategoryAPI');
+Route::resource('inputs','API\InputsAPI');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
