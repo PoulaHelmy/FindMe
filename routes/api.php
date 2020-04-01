@@ -31,10 +31,23 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function () {
     Route::post('reset', 'API\PasswordResetController@reset');
 });
 Route::resource('categories','API\CategoryApi');
+Route::resource('subcategories','API\SubCategoryAPI');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+
+
+
+
+
+
+
+
 Route::post('categories/id',function ($id){
-   $name="TOOOOOOOTA";
-   $cat=\App\Models\Category::find($id);
-   $cat->name=$name;
-   $cat->save();
-   dd($cat);
+    $name="TOOOOOOOTA";
+    $cat=\App\Models\Category::find($id);
+    $cat->name=$name;
+    $cat->save();
+    dd($cat);
 });

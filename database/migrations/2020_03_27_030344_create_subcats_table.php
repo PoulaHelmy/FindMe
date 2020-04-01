@@ -18,7 +18,10 @@ class CreateSubcatsTable extends Migration
             $table->string('name');
             $table->string('meta_keywords')->nullable()->default(null);
             $table->string('meta_des')->nullable()->default(null);
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
         });
     }
 

@@ -8,4 +8,9 @@ class Category extends Model
 {
     protected $fillable = ['name','meta_keywords','meta_des'];
     protected $hidden=['created_at','updated_at'];
+
+
+    public function subcat(){
+        return $this->hasMany(SubCategory::class);
+    }
 }

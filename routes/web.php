@@ -22,3 +22,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+
+
+
+Route::get('/test', function () {
+    $cat=App\Models\Category::find(1);
+    //dd($cat->subcat);
+    $sub=App\Models\SubCategory::find(45);
+    dd($sub->cat);
+});
+
+

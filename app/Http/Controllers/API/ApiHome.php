@@ -48,6 +48,12 @@ class ApiHome extends Controller
         return $this->sendError('Not Found',400);
     }
 
-
+    public function destroy($id){
+        $row=$this->model->find($id);
+        if(!$row)
+            return $this->sendError('This ITEM Not Found',400);
+        $row->delete();
+        return$this->sendResponse(null,'ITEM Deleted Successfully');
+    }//end of destroy
 
 }//end of controller

@@ -23,24 +23,15 @@ class CategoryApi extends ApiHome
         return $this->sendResponse(new CategoryResource($cat),'Created Successfully');
     }//end of store
 
-    //There is Problem in updating
-    public function update(Store $request,$id){
 
+    public function update(Store $request,$id){
         $cat=$this->model->find($id);
         if(!$cat)
             return $this->sendError('This Category Not Found',400);
        $cat->update($request->all());
         return$this->sendResponse(new CategoryResource($cat),'Category Updated Successfully');
-
-
     }//end of update
 
-    public function destroy($id){
-        $cat=Category::find($id);
-        if(!$cat)
-            return $this->sendError('This Category Not Found',400);
-        $cat->delete();
-        return$this->sendResponse(null,'Category Deleted Successfully');
-    }//end of store
+
 
 }//end of controller
