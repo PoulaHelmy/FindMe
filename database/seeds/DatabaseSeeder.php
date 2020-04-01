@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
           //  Items::class,
            // Categoris::class,
          //  SubCategoris::class,
-            Inputs::class,
-//             Tags::class
+           // Inputs::class,
+         //Tags::class
 
 
 
