@@ -9,12 +9,17 @@ class CategoryResource extends JsonResource
 
     public function toArray($request){
 
-       //return parent::toArray($request);
+//        $AllCats=[];
+//        foreach($this->subcat as $subcat){
+//            array_push($AllCats,new SubCategoryResource($subcat));
+//        }
         return [
             'id'            =>$this->id,
             'name'          =>$this->name,
             'meta_description'   =>$this->meta_des,
-            'meta_keywords'  =>$this->meta_keywords
+            'meta_keywords'  =>$this->meta_keywords,
+//            'number_sub_categories' =>sizeof($AllCats),
+//            'sub_categories'=> $AllCats
         ];
 
     }

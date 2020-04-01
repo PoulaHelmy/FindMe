@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BackEnd\Categories\Store;
+use App\Models\Subcat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -31,6 +32,7 @@ class CategoryApi extends ApiHome
         $row->update($request->all());
         return$this->sendResponse(new CategoryResource($row),'Category Updated Successfully');
     }//end of update
+
 
 
 

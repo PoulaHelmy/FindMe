@@ -28,7 +28,7 @@ Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProv
 Route::get('/test', function () {
     $cat=App\Models\Category::find(1);
     //dd($cat->subcat);
-    $sub=App\Models\SubCategory::find(45);
+    $sub=App\Models\Subcat::find(45);
     dd($sub->cat);
 });
 

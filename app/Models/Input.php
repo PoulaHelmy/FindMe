@@ -10,5 +10,7 @@ class Input extends Model
     protected $hidden=['created_at','updated_at'];
 
 
-
+    public function subcats(){
+        return $this->belongsToMany(Subcat::class,'inputs_subcats');
+    }
 }
