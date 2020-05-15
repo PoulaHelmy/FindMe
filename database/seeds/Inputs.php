@@ -17,6 +17,9 @@ class Inputs extends Seeder
         for($i = 0 ;$i< 30 ;$i++){
             $array = [
                 'name' => $faker->word,
+                'label'=>$faker->word,
+                'type'=>$faker->word,
+                'placeholder'=>$faker->word,
             ];
             $input=\App\Models\Input::create($array);
             //$input->subcat()->sync(array_rand($ids , 1));

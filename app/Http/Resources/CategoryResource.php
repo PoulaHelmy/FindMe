@@ -18,6 +18,7 @@ class CategoryResource extends JsonResource
             'name'          =>$this->name,
             'meta_description'   =>$this->meta_des,
             'meta_keywords'  =>$this->meta_keywords,
+            'created_at'    =>$this->created_at
 //            'number_sub_categories' =>sizeof($AllCats),
 //            'sub_categories'=> $AllCats
         ];

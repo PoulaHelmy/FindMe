@@ -5,7 +5,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Requests\BackEnd\SubCategories\Store;
 use App\Http\Requests\BackEnd\SubCategories\Update;
+use App\Http\Resources\InputsFullDetailsResource;
 use App\Http\Resources\SubCategoryResource;
+use App\Models\Input;
 use App\Models\Subcat;
 use Illuminate\Http\Request;
 
@@ -18,12 +20,34 @@ class SubCategoryAPI extends ApiHome
     public function index(Request $request){
         return SubCategoryResource::collection(Subcat::all());
     }//end of index
+    public function show($id){
 
+        $row=$this->model->findOrFail($id);
+        if($row) {
+        //            dd($row);
+            return $this->sendResponse(new SubCategoryResource($row),
+                'Data Retrieved Successfully');
+        }
+        return $this->sendError('Not Found',400);
+    }
+    public function indexWithFilter(Request $request){
+        if($request->get('filter')==''||$request->get('filter')==null){
+            return SubCategoryResource::collection(
+                Subcat::orderBy($request->get('order'), $request->get('sort'))->
+                paginate($request->get('pageSize')));
+        }
+        else{
+            return
+                SubCategoryResource::collection(Subcat::when($request->filter,function ($query)use($request){
+                    return $query->where('name','like','%'.$request->filter.'%');})
+                    ->orderBy($request->get('order'), $request->get('sort'))
+                    ->paginate($request->get('pageSize')));
+        }
+    }//endof index
     public function store(Store $request){
         $row=Subcat::create($request->all());
         return $this->sendResponse(new SubCategoryResource($row),'Created Successfully');
     }//end of store
-
     public function update(Update $request,$id){
         $row=$this->model->find($id);
         if(!$row)
@@ -31,7 +55,6 @@ class SubCategoryAPI extends ApiHome
         $row->update($request->all());
         return$this->sendResponse(new SubCategoryResource($row),'SubCategory Updated Successfully');
     }//end of update
-
     public function subcats_inputs(Request $request){
         $v = validator($request->only('subcat', 'inputs'), [
             'subcat' => 'required|integer',
@@ -48,5 +71,19 @@ class SubCategoryAPI extends ApiHome
         return$this->sendResponse(new SubCategoryResource($row),'Attachment the inputs to this subcategory is Successfully');
 
     }//end of update
+    public function all_subcatsids($id)
+    {
+        $AllInputs = [];
+        $row = $this->model->find($id);
+        if (!$row)
+            return $this->sendError('This SubCategory Not Found', 400);
+        foreach ($row->inputs as $input) {
+            $inputData=Input::find($input->id);
+            array_push($AllInputs, [new InputsFullDetailsResource($input)]);
+        }
+        return$this->sendResponse($AllInputs,'All Inputs Data Reteived Successfully');
+    }
 
-}
+
+}//end of class
+

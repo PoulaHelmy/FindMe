@@ -24,25 +24,17 @@ class PasswordResetController extends ApiHome
         ]);
         $user = User::where('email', $request->email)->first();
         if (!$user)
-            return $this->sendError('We can\'t find a user with that e-mail address',404);
+            return $this->sendError('We can\'t find a user with that e-mail address','',404);
 
         $passwordReset = PasswordReset::updateOrCreate(
             ['email' => $user->email],
             ['email' => $user->email, 'token' => Str::random(60)]);
+
         if ($user && $passwordReset)
             $user->notify(new PasswordResetRequest($passwordReset->token));
-        return $this->sendResponse(null,'We have e-mailed your password reset link!');
+        return $this->sendResponse($passwordReset,'We have e-mailed your password reset link!');
 
     }//end of create
-
-    /**
-     * Find token password reset
-     *
-     * @param  [string] $token
-     * @return [string] message
-     * @return [json] passwordReset object
-     */
-
 
     public function find($token)
     {
@@ -56,19 +48,6 @@ class PasswordResetController extends ApiHome
         }
         return $this->sendResponse($passwordReset,'Success');
     }//end of find
-
-
-     /**
-     * Reset password
-     *
-     * @param  [string] email
-     * @param  [string] password
-     * @param  [string] password_confirmation
-     * @param  [string] token
-     * @return [string] message
-     * @return [json] user object
-     */
-
 
     public function reset(Request $request)
     {
@@ -94,7 +73,6 @@ class PasswordResetController extends ApiHome
         $user->notify(new PasswordResetSuccess($passwordReset));
         return $this->sendResponse($user,'Success');
     }//end of reset
-
 
 
 }//end of controller

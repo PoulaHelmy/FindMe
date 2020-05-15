@@ -162,6 +162,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -174,6 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 

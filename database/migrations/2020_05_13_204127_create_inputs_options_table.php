@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInputablesTable extends Migration
+class CreateInputsOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateInputablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('inputables', function (Blueprint $table) {
+        Schema::create('inputs_options', function (Blueprint $table) {
             $table->id();
-            $table->integer('input_id');
-            $table->morphs('inputable');
+            $table->unsignedBigInteger('input_id');
+            $table->string('optionName');
             $table->timestamps();
+            $table->foreign('input_id')->references('id')->on('inputs')->onDelete('cascade');
+
         });
     }
 
@@ -28,6 +30,6 @@ class CreateInputablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inputables');
+        Schema::dropIfExists('inputs_options');
     }
 }

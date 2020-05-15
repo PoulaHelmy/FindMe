@@ -17,6 +17,11 @@ class InputsResource extends JsonResource
         return [
             'id'            =>$this->id,
             'name'          =>$this->name,
+            'label'         =>$this->label,
+            'type'         =>$this->type,
+            'placeholder'         =>$this->placeholder,
+            'inputType'         =>$this->inputType,
+            'created_at'    =>$this->created_at
         ];
 
     }

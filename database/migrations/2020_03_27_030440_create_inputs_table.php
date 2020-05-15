@@ -16,6 +16,10 @@ class CreateInputsTable extends Migration
         Schema::create('inputs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('label');
+            $table->string('type');
+            $table->string('placeholder')->nullable();
+            $table->string('inputOptionsInput')->nullable();
             $table->timestamps();
         });
     }

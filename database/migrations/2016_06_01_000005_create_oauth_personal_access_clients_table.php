@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubcatablesTable extends Migration
+class CreateOauthPersonalAccessClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSubcatablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subcatables', function (Blueprint $table) {
-            $table->id();
-            $table->integer('subcat_id');
-            $table->morphs('subcatable');
+        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('client_id');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSubcatablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subcatables');
+        Schema::dropIfExists('oauth_personal_access_clients');
     }
 }

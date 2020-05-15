@@ -28,6 +28,7 @@ class Store extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
+            'phone'=>'required|string|min:10|max:15|unique:users,phone',
             'remember_me' => 'boolean'
         ];
     }

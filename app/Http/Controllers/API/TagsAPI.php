@@ -18,6 +18,20 @@ class TagsAPI extends ApiHome
         return TagsResource::collection(Tag::all());
     }//end of index
 
+    public function indexWithFilter(Request $request){
+        if($request->get('filter')==''||$request->get('filter')==null){
+            return TagsResource::collection(
+                Tag::orderBy($request->get('order'), $request->get('sort'))->
+                paginate($request->get('pageSize')));
+        }
+        else{
+            return
+                TagsResource::collection(Tag::when($request->filter,function ($query)use($request){
+                    return $query->where('name','like','%'.$request->filter.'%');})
+                    ->orderBy($request->get('order'), $request->get('sort'))
+                    ->paginate($request->get('pageSize')));
+        }
+    }//end of filter
     public function store(Store $request){
         $row=Tag::create($request->all());
         return $this->sendResponse(new TagsResource($row),'Created Successfully');

@@ -6,22 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class Users extends Controller
+class Users extends ApiHome
 {
-    public function __construct()
+    public function __construct(User $model)
     {
-//        $this->middleware('auth:api');
+        parent::__construct($model);
     }
-    public function index(){
+
+    public function getAllUsers(){
         $data=User::all();
-        return response()->json($data,200);
+        return $this->sendResponse($data,'Success Retrive ALL Users');
     }
 
-    public function show(User $user){
-        $data=['data'=>$user];
-
-        return response()->json($data,200);
-    }
 
 
 }

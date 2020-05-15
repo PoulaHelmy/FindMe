@@ -4,16 +4,41 @@
     <list default="true" id="ee5679d2-2734-4551-bf55-8b22284d366e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/InputsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/InputsAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Passport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Passport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PasswordResetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/PasswordResetController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/TagsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/TagsAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/SocialAccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/SocialAccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Inputs/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Inputs/Store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Users/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Users/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/InputsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/InputsResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/SubCategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SubCategoryResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TagsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TagsResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Input.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Input.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Subcat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SocialAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SocialAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Subcat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Subcat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/PasswordResetRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/PasswordResetRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/PasswordResetSuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/PasswordResetSuccess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/SignupActivate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/SignupActivate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_27_030357_create_subcatables_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_27_030440_create_inputs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_27_030440_create_inputs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_27_030453_create_inputables_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_29_021658_create_categorables_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_31_052659_create_prepare_users_table_for_social_account.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SubCategoris.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SubCategoris.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Inputs.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Inputs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,14 +195,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests/BackEnd/SubCategories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests/BackEnd/Inputs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\Poula Helmy\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-1\193.6911.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Requests\BackEnd\SubCategories" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\under development\FindMe\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Requests\BackEnd\Inputs" />
+      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Requests\BackEnd\SubCategories" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -196,7 +224,24 @@
       <workItem from="1585630729379" duration="8734000" />
       <workItem from="1585647433308" duration="9377000" />
       <workItem from="1585661815406" duration="8713000" />
-      <workItem from="1585709522756" duration="12269000" />
+      <workItem from="1585709522756" duration="12548000" />
+      <workItem from="1585904093831" duration="491000" />
+      <workItem from="1586366125651" duration="132000" />
+      <workItem from="1586366287644" duration="88000" />
+      <workItem from="1586435579687" duration="59000" />
+      <workItem from="1586436232806" duration="37000" />
+      <workItem from="1588383683628" duration="299000" />
+      <workItem from="1588738818918" duration="2983000" />
+      <workItem from="1588742275001" duration="1293000" />
+      <workItem from="1588788782093" duration="1675000" />
+      <workItem from="1588802060917" duration="1246000" />
+      <workItem from="1588846611919" duration="712000" />
+      <workItem from="1588906327223" duration="1425000" />
+      <workItem from="1588976388740" duration="9971000" />
+      <workItem from="1589111135518" duration="3063000" />
+      <workItem from="1589401881471" duration="11146000" />
+      <workItem from="1589507291730" duration="846000" />
+      <workItem from="1589522893681" duration="200000" />
     </task>
     <servers />
   </component>
@@ -213,24 +258,32 @@
     </state>
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585717441714" />
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606259393" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585721190926">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589411784507">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1585687874003" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589411784507" />
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585721190926" />
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606076463" />
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1585612338014">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1586436276420">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1585612338014" />
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1586436276420" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1586366314359">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1586366314359" />
+    <state x="257" y="101" width="1109" height="614" key="find.popup" timestamp="1588977750385">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="257" y="101" width="1109" height="614" key="find.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1588977750385" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1585593776799">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585593776799" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585719400726">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588987214320">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1585640256127" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1588987214320" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585719400726" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1585606619875" />
   </component>

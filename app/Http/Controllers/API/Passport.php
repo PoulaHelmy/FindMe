@@ -40,10 +40,11 @@ class Passport extends ApiHome
     }//end of login
 
     public function signup(Request $request){
-        $v = validator($request->only('email', 'name', 'password'), [
+        $v = validator($request->only('email', 'name', 'password','phone'), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
+            'phone' => 'required|string|min:10|max:15|unique:users,phone',
         ]);
 
         if ($v->fails())
@@ -52,6 +53,7 @@ class Passport extends ApiHome
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'phone' =>$request->phone,
             'activation_token' => Str::random(60)
         ]);
         $avatar = Avatar::create($user->name)->getImageObject()->encode('png');
@@ -66,12 +68,14 @@ class Passport extends ApiHome
     {
         return  $this->sendResponse(['user' => auth()->user()],'Success To Retrieve the current Auth User Data');
     }//end of details
+
     public function update(Request $request)
     {
-        $v = validator($request->only('email', 'name', 'password'), [
+        $v = validator($request->only('email', 'name', 'phone','password'), [
             'name' => 'string|max:255',
             'email' => 'string|email|max:255|unique:users',
             'password' => 'string|min:6',
+            'phone' => '|string|min:10|max:15|unique:users,phone'
         ]);
 
         if ($v->fails())
@@ -103,6 +107,7 @@ class Passport extends ApiHome
     public function SignupActivate($token)
     {
         $user = User::where('activation_token', $token)->first();
+
         if (!$user)
             return $this->sendError('This activation token is invalid.!',404);
 

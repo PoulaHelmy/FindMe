@@ -40,8 +40,12 @@ class PasswordResetSuccess extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url('http://localhost:4200/auth/login');
+
         return (new MailMessage)
             ->line('You are changed your password successful.')
+            ->action('GO TO Our Site', url($url))
+
             ->line('If you did change password, no further action is required.')
             ->line('If you did not change password, protect your account.');
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests\BackEnd\Inputs;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Store extends FormRequest
+class Update extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,10 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required','min:3', 'max:191','string','unique:inputs'],
-            'label' => ['required','min:3', 'max:191','string'],
-            'type' => ['required','min:3', 'max:191','string'],
-            'InputType' => ['min:3', 'max:191','string'],
+            'name' => ['min:3', 'max:191','string','unique:inputs'],
+            'label' => ['min:3', 'max:191','string'],
+            'type' => ['min:3', 'max:191','string'],
+            'InputType' => ['max:191','string'],
             'placeholder' => ['min:3', 'max:191','string'],
             'inputOptions.*.optionName'=>['string','max:191'],
             'inputsValidators.*.validatorName'=>['string','max:191',],

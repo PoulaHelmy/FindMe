@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
 
             // Users::class,
           //  Items::class,
-           // Categoris::class,
+            Categoris::class,
            SubCategoris::class,
-           // Inputs::class,
-         //Tags::class
+            Inputs::class,
+         Tags::class
 
 
 
