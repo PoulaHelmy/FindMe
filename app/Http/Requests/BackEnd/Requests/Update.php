@@ -25,7 +25,11 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>['min:3', 'max:191','string'],
+            'user_id'=>['integer'],
+            'item_id'=>['integer'],
+            'des'=>['min:3', 'string'],
+            'status'=>['digits_between:0,1']
         ];
     }
 }

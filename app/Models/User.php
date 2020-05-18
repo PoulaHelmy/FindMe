@@ -34,8 +34,12 @@ class User extends Authenticatable
     public function accounts(){
         return $this->hasMany(SocialAccount::class);
     }
-
-
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
+    public function itemRequests(){
+        return $this->hasMany(RequestItems::class);
+    }
 
 
 

@@ -18,5 +18,7 @@ class Subcat extends Model
     public function inputs(){
         return $this->belongsToMany(Input::class,'inputs_subcats');
     }
-
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
 }

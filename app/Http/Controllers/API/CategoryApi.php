@@ -11,7 +11,7 @@ use App\Models\Category;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\CategoryFullDetaillResouce;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Resources\SubCategoryLiteResource;
 class CategoryApi extends ApiHome
 {
     public function __construct(Category $model){
@@ -62,7 +62,18 @@ class CategoryApi extends ApiHome
         return$this->sendResponse(new CategoryResource($row),'Category Updated Successfully');
     }//end of update
 
+    public function all_subCatsData($id){
+        $AllSubCats = [];
+        $row = $this->model->find($id);
+        if (!$row)
+            return $this->sendError('This Category Not Found', 400);
+        foreach ($row->subcat as $subCat) {
+            $subCatData=Subcat::find($subCat->id);
+            array_push($AllSubCats, $subCatData);
+        }
+        return$this->sendResponse($AllSubCats,'All Inputs Data Reteived Successfully');
 
+    }
 
 
 }//end of controller

@@ -25,7 +25,16 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> ['min:3', 'max:191','string'],
+            'category_id'=>['integer'],
+            'subcat_id'=>['integer'],
+            'location'=>['min:3','string'],
+            'des'=>['min:3','string'],
+            'is_found'=>['digits_between:0,1'],
+            'date'=>['date'],
+           'images'=>[
+            //    'image','mimes:jpeg,bmp,png'
+               ]
         ];
     }
 }

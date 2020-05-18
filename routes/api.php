@@ -29,6 +29,18 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('user', 'API\Passport@details');
         Route::get('logout', 'API\Passport@logout');
         Route::post('update', 'API\Passport@update');
+        Route::resource('items','API\Items');
+        Route::resource('items/values','API\ItemValues');
+        Route::get('items/upoptions/{id}','API\Items@getAllItemOptions');
+        Route::post('items/questions', 'API\Questions@store');
+        Route::put('items/questions/{id}', 'API\Questions@update');
+        Route::get('items/questions/{id}', 'API\Questions@show');
+
+
+
+
+
+
     });
 });
 
@@ -58,6 +70,8 @@ Route::post('subcategories/inputs','API\SubCategoryAPI@subcats_inputs');
 
 /* Get All Inputs Id's Realted to a subcat */
 Route::get('subcatsinputs/{id}','API\SubCategoryAPI@all_subcatsids');
+/* Get All subCAts  Realted to a cat */
+Route::get('catsubcats/{id}','API\CategoryApi@all_subCatsData');
 
 
 
@@ -76,3 +90,12 @@ Route::get('subcatsinputs/{id}','API\SubCategoryAPI@all_subcatsids');
 ////        inputOption::destroy($option->id);
 ////    }
 //});
+
+
+
+
+
+
+
+
+//Route::post('items/images','API\ImagesController@uploadImages');

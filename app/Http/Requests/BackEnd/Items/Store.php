@@ -25,7 +25,18 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> ['required','min:3', 'max:191','string'],
+            'category_id'=>['required','integer'],
+            'subcat_id'=>['required','integer'],
+            'location'=>['required','min:3','string'],
+            'des'=>['required','min:3','string'],
+            'is_found'=>['required','digits_between:0,1'],
+            'date'=>['date','required'],
+           'images.*.*'=>[
+            //    'image',
+            //    'mimes:jpeg,bmp,png'
+               ]
+
         ];
     }
 }

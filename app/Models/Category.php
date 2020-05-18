@@ -13,4 +13,7 @@ class Category extends Model
     public function subcat(){
         return $this->hasMany(Subcat::class);
     }
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
 }
