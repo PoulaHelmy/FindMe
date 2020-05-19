@@ -32,9 +32,18 @@ Route::group(['prefix' => 'auth'], function () {
         Route::resource('items','API\Items');
         Route::resource('items/values','API\ItemValues');
         Route::get('items/upoptions/{id}','API\Items@getAllItemOptions');
+
         Route::post('items/questions', 'API\Questions@store');
         Route::put('items/questions/{id}', 'API\Questions@update');
         Route::get('items/questions/{id}', 'API\Questions@show');
+
+
+        Route::resource('requests', 'API\ItemsRequests');
+        Route::post('requests/change/status', 'API\ItemsRequests@changeStatus');
+
+
+
+
 
 
 
@@ -54,7 +63,7 @@ Route::resource('subcategories','API\SubCategoryAPI');
 Route::resource('inputs','API\InputsAPI');
 Route::resource('tags','API\TagsAPI');
 
-
+//Route::resource('requests','API\ItemsRequests');
 
 /* Filters Routes */
 Route::get('filter/categories','API\CategoryApi@indexWithFilter');

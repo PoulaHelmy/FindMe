@@ -38,7 +38,7 @@ class User extends Authenticatable
         return $this->hasMany(Item::class);
     }
     public function itemRequests(){
-        return $this->hasMany(RequestItems::class);
+        return $this->hasMany(RequestItems::class,'user_id');
     }
 
 

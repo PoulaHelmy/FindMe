@@ -11,18 +11,15 @@ class RequestItems extends Model
     protected $table='requests';
 
 
-
-
     public function item(){
         return $this->belongsTo(Item::class,'item_id');
     }
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
-    public function requestResponses(){
-        return $this->hasMany('App\Models\QuestionResponse');
+    public function questionResponses(){
+        return $this->hasMany('App\Models\QuestionResponse','request_id');
     }
-
 
 
 

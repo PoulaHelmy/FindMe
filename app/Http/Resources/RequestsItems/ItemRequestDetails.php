@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Resources\RequestsItems;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ItemRequestDetails extends JsonResource
+{
+
+    public function toArray($request)
+    {
+        $AllQuestions=[];
+        foreach($this->questionResponses as $question){
+            array_push($AllQuestions,$question);
+        }
+        return [
+            'id'            =>$this->id,
+            'name'          =>$this->name,
+            'description'   =>$this->des,
+            'status'  =>$this->status,
+            'created_at'    =>$this->created_at,
+            'AllQuestions'=> $AllQuestions
+        ];
+    }
+}

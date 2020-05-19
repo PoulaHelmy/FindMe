@@ -26,7 +26,7 @@ class Store extends FormRequest
     {
         return [
             'name'=>['required','min:3', 'max:191','string'],
-            'user_id'=>['required','integer'],
+            'user_id'=>['integer'],
             'item_id'=>['required','integer'],
             'des'=>['required','min:3', 'string'],
             'status'=>['digits_between:0,1']

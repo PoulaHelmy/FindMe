@@ -11,7 +11,7 @@ class QuestionResponse extends Model
     protected $table='questionresponses';
 
 
-    public function itemRequest(){
+    public function req(){
         return $this->belongsTo(RequestItems::class,'request_id');
     }
 

@@ -15,13 +15,13 @@ class Item extends Model
         return $this->morphMany('App\Models\Photo', 'photoable');
     }
     public function dynamicValues(){
-        return $this->hasMany('App\Models\ItemOption');
+        return $this->hasMany('App\Models\ItemOption','item_id');
     }
     public function questions(){
-        return $this->hasMany('App\Models\Question');
+        return $this->hasMany('App\Models\Question','item_id');
     }
     public function itemRequests(){
-        return $this->hasMany('App\Models\RequestItems');
+        return $this->hasMany('App\Models\RequestItems','item_id');
     }
     public function cat(){
         return $this->belongsTo(Category::class,'category_id');

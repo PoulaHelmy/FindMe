@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\ItemOption;
 use App\Models\Photo;
 use App\Models\Subcat;
+use App\Models\Question;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -17,10 +18,16 @@ class ItemsDetailsResource extends JsonResource
 
         $Alloptions=[];
         $AllPhotos=[];
+        $AllQuestions=[];
         foreach($this->dynamicValues as $option)
         {
             $row = ItemOption::find($option->id);
             array_push($Alloptions,[$option]);
+        }
+        foreach($this->questions as $question)
+        {
+            $row = Question::find($question->id);
+            array_push($AllQuestions,[$question]);
         }
         foreach($this->photos as $photo)
         {
@@ -38,12 +45,16 @@ class ItemsDetailsResource extends JsonResource
             'subcat_id'  =>$this->subcat_id,
             'subcat'  =>Subcat::find($this->subcat_id)->name,
             'location'   =>$this->location,
+            'AllQuestions'   =>$AllQuestions,
             'description'  =>$this->des,
             'is_found'   =>$this->is_found,
             'date'  =>$this->date,
             'images'=>$AllPhotos,
             'dynamicValues'=>$Alloptions,
-            'created_at'    =>$this->created_at
+            'created_at'    =>$this->created_at,
+            'optionsCount'=>sizeof($Alloptions),
+            'imagesCount'=>sizeof($AllPhotos),
+            'questionsCount'=>sizeof($AllQuestions),
         ];
     }
 }
