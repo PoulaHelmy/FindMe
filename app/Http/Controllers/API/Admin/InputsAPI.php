@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\Admin;
 
-use App\Http\Controllers\Controller;
+
+use App\Http\Controllers\API\ApiHome;
 use App\Http\Requests\BackEnd\Inputs\Store;
 use App\Http\Requests\BackEnd\Inputs\Update;
 use App\Http\Resources\InputsFullDetailsResource;

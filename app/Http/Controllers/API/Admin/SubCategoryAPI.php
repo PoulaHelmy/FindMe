@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\Admin;
 
+
+use App\Http\Controllers\API\ApiHome;
 
 use App\Http\Requests\BackEnd\SubCategories\Store;
 use App\Http\Requests\BackEnd\SubCategories\Update;

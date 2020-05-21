@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Item extends Model
 {
+    use Searchable;
+
     protected $fillable = ['name','user_id','category_id','subcat_id','location','des','is_found','date'];
     protected $hidden=['updated_at'];
     protected $table='items';
@@ -35,8 +38,25 @@ class Item extends Model
     }
 
 
-
-
+    public function searchableAs()
+    {
+        return 'items_index';
+    }
+//    /**
+//     * Get the indexable data array for the model.
+//     *
+//     * @return array
+//     */
+//    public function toSearchableArray()
+//    {
+//        $array = $this->toArray();
+//
+//        // Customize array...
+//  $array = $this->toArray();
+//
+//  return array('id' => $array['id'],'name' => $array['name']);
+//        return $array;
+//    }
 
 
 

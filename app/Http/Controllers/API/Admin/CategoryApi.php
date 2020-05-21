@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers\API\Admin;
+
+
+use App\Http\Controllers\API\ApiHome;
 use App\Http\Requests\BackEnd\Categories\Store;
 use App\Models\Subcat;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\CategoryFullDetaillResouce;
-use Illuminate\Support\Facades\DB;
-use App\Http\Resources\SubCategoryLiteResource;
+
 class CategoryApi extends ApiHome
 {
     public function __construct(Category $model){

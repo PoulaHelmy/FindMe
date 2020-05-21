@@ -54,33 +54,51 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 
+Route::get('testpola','API\ItemsFilters@myFilter');
 
 
 
 /* Cruds  Routes */
-Route::resource('categories','API\CategoryApi');
-Route::resource('subcategories','API\SubCategoryAPI');
-Route::resource('inputs','API\InputsAPI');
-Route::resource('tags','API\TagsAPI');
+Route::resource('categories','API\Admin\CategoryApi');
+Route::resource('subcategories','API\Admin\SubCategoryAPI');
+Route::resource('inputs','API\Admin\InputsAPI');
+Route::resource('tags','API\Admin\TagsAPI');
 
 //Route::resource('requests','API\ItemsRequests');
 
 /* Filters Routes */
-Route::get('filter/categories','API\CategoryApi@indexWithFilter');
-Route::get('filter/tags','API\TagsAPI@indexWithFilter');
-Route::get('filter/inputs','API\InputsAPI@indexWithFilter');
-Route::get('filter/subcategories','API\SubCategoryAPI@indexWithFilter');
+Route::get('filter/categories','API\Admin\CategoryApi@indexWithFilter');
+Route::get('filter/tags','API\Admin\TagsAPI@indexWithFilter');
+Route::get('filter/inputs','API\Admin\InputsAPI@indexWithFilter');
+Route::get('filter/subcategories','API\Admin\SubCategoryAPI@indexWithFilter');
+Route::get('filter/items','API\Items@indexWithFilter');
 
 
 /* Relations ships  Routes */
 
-Route::post('subcategories/inputs','API\SubCategoryAPI@subcats_inputs');
+Route::post('subcategories/inputs','API\Admin\SubCategoryAPI@subcats_inputs');
 
 
 /* Get All Inputs Id's Realted to a subcat */
-Route::get('subcatsinputs/{id}','API\SubCategoryAPI@all_subcatsids');
+Route::get('subcatsinputs/{id}','API\Admin\SubCategoryAPI@all_subcatsids');
 /* Get All subCAts  Realted to a cat */
-Route::get('catsubcats/{id}','API\CategoryApi@all_subCatsData');
+Route::get('catsubcats/{id}','API\Admin\CategoryApi@all_subCatsData');
+
+
+Route::get('email', 'API\EmailController@sendEmail');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

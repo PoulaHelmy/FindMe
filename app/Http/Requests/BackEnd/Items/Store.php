@@ -32,6 +32,7 @@ class Store extends FormRequest
             'des'=>['required','min:3','string'],
             'is_found'=>['required','digits_between:0,1'],
             'date'=>['date','required'],
+
            'images.*.*'=>[
             //    'image',
             //    'mimes:jpeg,bmp,png'

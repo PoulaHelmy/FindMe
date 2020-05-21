@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee5679d2-2734-4551-bf55-8b22284d366e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FindMe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FindMe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/CategoryApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/ImagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/InputsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InputsAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Items.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Items.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsRequests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Requests/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Requests/Store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/SubCategoryAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/TagsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/TagsAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Items/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Items/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/QuestionResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/QuestionResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RequestItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RequestItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_28_030657_create_requests_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_28_030657_create_requests_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +172,10 @@
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/linkedin" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/google" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/twitter" />
+      <path value="$PROJECT_DIR$/vendor/algolia/scout-extended" />
+      <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <path value="$PROJECT_DIR$/vendor/riimu/kit-phpencoder" />
+      <path value="$PROJECT_DIR$/vendor/laravel/scout" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Zpedsc6Y9PsRvVWmhF94QYkalE" />
@@ -186,14 +197,15 @@
     <property name="ts.external.directory.path" value="C:\Users\Poula Helmy\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-1\193.6911.26\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Controllers\API" />
-      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Models" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\FindMe\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Requests\BackEnd\Inputs" />
       <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Requests\BackEnd\SubCategories" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Controllers\API\Admin" />
+      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Http\Controllers\API" />
+      <recent name="C:\xampp\htdocs\laravel\under development\FindMe\app\Models" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\FindMe\app\Models" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -235,6 +247,13 @@
       <workItem from="1589702160256" duration="1174000" />
       <workItem from="1589804020856" duration="3739000" />
       <workItem from="1589812366583" duration="10175000" />
+      <workItem from="1589880539457" duration="4519000" />
+      <workItem from="1589916049324" duration="2897000" />
+      <workItem from="1589938003546" duration="3377000" />
+      <workItem from="1589947481252" duration="1497000" />
+      <workItem from="1589963113694" duration="1343000" />
+      <workItem from="1589980917874" duration="1179000" />
+      <workItem from="1589985098462" duration="2006000" />
     </task>
     <servers />
   </component>
@@ -256,10 +275,10 @@
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589532414764" />
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585717441714" />
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606259393" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589853348118">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589941339818">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589853348118" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589941339818" />
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585721190926" />
     <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1585606076463" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1589538665944">
@@ -274,15 +293,16 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="257" y="101" width="1109" height="614" key="find.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1588977750385" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1585593776799">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1590025560194">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585593776799" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589855734354">
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1590025560194" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1589973919981" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589981342373">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589855734354" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589981342373" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585719400726" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1585606619875" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589973880151" />
   </component>
 </project>

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\Admin;
 
 
+use App\Http\Controllers\API\ApiHome;
 use App\Http\Requests\BackEnd\Tags\Store;
 use App\Http\Resources\TagsResource;
 use App\Models\Tag;

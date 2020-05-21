@@ -32,13 +32,13 @@ class Items extends ApiHome
     }
     public function indexWithFilter(Request $request){
         if($request->get('filter')==''||$request->get('filter')==null){
-            return CategoryResource::collection(
-                Category::orderBy($request->get('order'), $request->get('sort'))->
+            return ItemsResource::collection(
+                Item::orderBy($request->get('order'), $request->get('sort'))->
                 paginate($request->get('pageSize')));
         }
         else{
             return
-                CategoryResource::collection(Category::when($request->filter,function ($query)use($request){
+                ItemsResource::collection(Item::when($request->filter,function ($query)use($request){
                     return $query->where('name','like','%'.$request->filter.'%');})
                     ->orderBy($request->get('order'), $request->get('sort'))
                     ->paginate($request->get('pageSize')));
@@ -49,6 +49,7 @@ class Items extends ApiHome
         $requestArray =  ['user_id' => auth()->user()->id] + $request->all();
         $row = $this->model->create($requestArray);
         $fileName = $this->uploadImages($request,$row->id);
+        $row->save();
         return $this->sendResponse($row,
             'Item Created Successfully');
     }
@@ -67,6 +68,7 @@ class Items extends ApiHome
             }
             $fileName = $this->uploadImages($request,$row->id);
         }
+        $row->save();
         return $this->sendResponse($row,
             'Item Updated Successfully');
     }
@@ -132,7 +134,16 @@ class Items extends ApiHome
         $row->delete();
         return$this->sendResponse(null,'ITEM Deleted Successfully');
     }//end of destroy
-    
+    public function fullTextSeacrch(Request $request){
+        if($request->get('itemSearch')){
+            $items=Item::search($request->itemSearch)->get();
+            return $this->sendResponse($items,
+                'Items Successfully');
+        }
+        else{
+            return Item::all();
+        }
+    }
 
 
 }//end of Class

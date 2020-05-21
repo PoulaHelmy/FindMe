@@ -125,6 +125,10 @@
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/linkedin" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/google" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/twitter" />
+      <path value="$PROJECT_DIR$/vendor/algolia/scout-extended" />
+      <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <path value="$PROJECT_DIR$/vendor/riimu/kit-phpencoder" />
+      <path value="$PROJECT_DIR$/vendor/laravel/scout" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

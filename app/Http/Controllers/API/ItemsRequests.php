@@ -19,11 +19,9 @@ class ItemsRequests extends ApiHome
         parent::__construct($model);
     }//end of constructor
     public function index(Request $request){
-
         return ItemRequest::collection(
             $this->model->where('user_id','=',auth()->user()->id)->get());
-
-    }//endof index
+    }//end of index
     public function show($id){
         $row=$this->model->findOrFail($id);
         if($row) {
@@ -104,7 +102,20 @@ class ItemsRequests extends ApiHome
             'Request Updated Successfully');
 
     }
-
+    public function indexWithFilter(Request $request){
+        if($request->get('filter')==''||$request->get('filter')==null){
+            return ItemRequest::collection(
+                RequestItems::orderBy($request->get('order'), $request->get('sort'))->
+                paginate($request->get('pageSize')));
+        }
+        else{
+            return
+                ItemRequest::collection(RequestItems::when($request->filter,function ($query)use($request){
+                    return $query->where('name','like','%'.$request->filter.'%');})
+                    ->orderBy($request->get('order'), $request->get('sort'))
+                    ->paginate($request->get('pageSize')));
+        }
+    }//end of indexWithFilter
 
 
 }//end of Class
