@@ -18,7 +18,6 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function () {
     Route::post('reset', 'API\PasswordResetController@reset');
 });
 
-Route::get('pola', 'API\Users@getAllUsers');
 
 Route::group(['prefix' => 'auth'], function () {
     Route::post('login', 'API\Passport@login');
@@ -31,7 +30,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::post('update', 'API\Passport@update');
         Route::resource('items','API\Items');
         Route::resource('items/values','API\ItemValues');
-        Route::get('items/upoptions/{id}','API\Items@getAllItemOptions');
+
 
         Route::post('items/questions', 'API\Questions@store');
         Route::put('items/questions/{id}', 'API\Questions@update');
@@ -48,15 +47,15 @@ Route::group(['prefix' => 'auth'], function () {
 
 
 
+        // Route::get('items/upoptions/{id}','API\Items@getAllItemOptions');
 
 
     });
 });
 
-
-Route::get('testpola','API\ItemsFilters@myFilter');
-
-
+/* --------------------------------------------------------------------------------- */
+/* Get All Inputs Id's Realted to a subcat */
+Route::get('subcatsinputs/{id}','API\Admin\SubCategoryAPI@all_subcatsids');
 
 /* Cruds  Routes */
 Route::resource('categories','API\Admin\CategoryApi');
@@ -64,26 +63,32 @@ Route::resource('subcategories','API\Admin\SubCategoryAPI');
 Route::resource('inputs','API\Admin\InputsAPI');
 Route::resource('tags','API\Admin\TagsAPI');
 
-//Route::resource('requests','API\ItemsRequests');
-
 /* Filters Routes */
 Route::get('filter/categories','API\Admin\CategoryApi@indexWithFilter');
 Route::get('filter/tags','API\Admin\TagsAPI@indexWithFilter');
 Route::get('filter/inputs','API\Admin\InputsAPI@indexWithFilter');
 Route::get('filter/subcategories','API\Admin\SubCategoryAPI@indexWithFilter');
-Route::get('filter/items','API\Items@indexWithFilter');
 
+/* Get All Inputs Id's Realted to a subcat && get ALL Inputs Values For this Item */
+Route::post('subcatalldata','API\Admin\SubCategoryAPI@all_items_subcats_data');
 
-/* Relations ships  Routes */
-
-Route::post('subcategories/inputs','API\Admin\SubCategoryAPI@subcats_inputs');
-
-
-/* Get All Inputs Id's Realted to a subcat */
-Route::get('subcatsinputs/{id}','API\Admin\SubCategoryAPI@all_subcatsids');
 /* Get All subCAts  Realted to a cat */
 Route::get('catsubcats/{id}','API\Admin\CategoryApi@all_subCatsData');
 
+/* Relations ships  Routes */
+Route::post('subcategories/inputs','API\Admin\SubCategoryAPI@subcats_inputs');
+
+
+/* --------------------------------------------------------------------------------- */
+
+
+
+Route::get('pola', 'API\Users@getAllUsers');
+
+
+Route::get('testpola/{q}','API\ItemsFilters@myFilter');
+
+Route::get('filter/items','API\Items@indexWithFilter');
 
 Route::get('email', 'API\EmailController@sendEmail');
 
@@ -100,6 +105,7 @@ Route::get('email', 'API\EmailController@sendEmail');
 
 
 
+//Route::resource('requests','API\ItemsRequests');
 
 
 

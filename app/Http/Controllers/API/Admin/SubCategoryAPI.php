@@ -11,6 +11,7 @@ use App\Http\Resources\InputsFullDetailsResource;
 use App\Http\Resources\SubCategoryResource;
 use App\Models\Input;
 use App\Models\Subcat;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class SubCategoryAPI extends ApiHome
@@ -85,7 +86,33 @@ class SubCategoryAPI extends ApiHome
         }
         return$this->sendResponse($AllInputs,'All Inputs Data Reteived Successfully');
     }
-
+    public function all_items_subcats_data(Request $request){
+        $v = validator($request->only('subcat_id', 'item_id'), [
+            'subcat_id' => 'required|integer',
+            'item_id' => 'required|integer',
+        ]);
+        if ($v->fails())
+            return $this->sendError('Validation Error.!',$v->errors()->all(),400);
+        $item=Item::find($request->item_id);
+        $row = Subcat::find($request->subcat_id);
+        $Alloptions=[];
+        $AllInputs = [];
+        if (!$row)
+            return $this->sendError('This SubCategory Not Found', 400);
+        if(!$item)
+            return $this->sendError('Item Not Found',400);
+        foreach ($row->inputs as $input) {
+            $inputData=Input::find($input->id);
+            array_push($AllInputs, new InputsFullDetailsResource($input));
+        }
+        foreach($item->dynamicValues as $option)
+        {
+            array_push($Alloptions,$option);
+        }
+        $data=[$Alloptions,$AllInputs ];
+        return  $this->sendResponse($data,
+        'Data Retrivred Successfully');
+    }
 
 }//end of class
 

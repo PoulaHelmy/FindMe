@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee5679d2-2734-4551-bf55-8b22284d366e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FindMe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FindMe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CategoryApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/CategoryApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/ImagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/InputsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/InputsAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/SubCategoryAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/SubCategoryAPI.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Items.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Items.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsFilters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsFilters.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ItemsRequests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SubCategoryAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/SubCategoryAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/TagsAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/TagsAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Items/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Items/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,6 +246,8 @@
       <workItem from="1589963113694" duration="1343000" />
       <workItem from="1589980917874" duration="1179000" />
       <workItem from="1589985098462" duration="2006000" />
+      <workItem from="1590038493944" duration="2536000" />
+      <workItem from="1590486496417" duration="2207000" />
     </task>
     <servers />
   </component>
@@ -298,11 +292,11 @@
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1590025560194" />
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1589973919981" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589981342373">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1590040406184">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1280.0.1280.994@0.0.1366.738" timestamp="1589981342373" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1585719400726" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589973880151" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1590040406184" />
   </component>
 </project>

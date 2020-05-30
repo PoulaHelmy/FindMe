@@ -42,21 +42,20 @@ class Item extends Model
     {
         return 'items_index';
     }
-//    /**
-//     * Get the indexable data array for the model.
-//     *
-//     * @return array
-//     */
-//    public function toSearchableArray()
-//    {
-//        $array = $this->toArray();
-//
-//        // Customize array...
-//  $array = $this->toArray();
-//
-//  return array('id' => $array['id'],'name' => $array['name']);
-//        return $array;
-//    }
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+
+
+  return ['id' =>$this->id ,
+      'name' => $this->name,
+      'is_found'=>$this->is_found
+  ];
+    }
 
 
 

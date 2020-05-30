@@ -19,8 +19,9 @@ class Items extends ApiHome
         parent::__construct($model);
     }//end of constructor
     public function index(Request $request){
+
         return ItemsResource::collection(
-            Item::all());
+            Item::where('user_id',auth()->user()->id)->get());
     }//endof index
     public function show($id){
         $row=$this->model->findOrFail($id);
@@ -134,20 +135,31 @@ class Items extends ApiHome
         $row->delete();
         return$this->sendResponse(null,'ITEM Deleted Successfully');
     }//end of destroy
-    public function fullTextSeacrch(Request $request){
-        if($request->get('itemSearch')){
-            $items=Item::search($request->itemSearch)->get();
-            return $this->sendResponse($items,
-                'Items Successfully');
-        }
-        else{
-            return Item::all();
-        }
-    }
+
 
 
 }//end of Class
 
+
+
+
+
+
+
+
+
+
+
+//public function fullTextSeacrch(Request $request){
+//    if($request->get('itemSearch')){
+//        $items=Item::search($request->itemSearch)->get();
+//        return $this->sendResponse($items,
+//            'Items Successfully');
+//    }
+//    else{
+//        return Item::all();
+//    }
+//}
 
 // public  function uploadImages(Request $request,$id){
 //     $photos=$request->get('images');

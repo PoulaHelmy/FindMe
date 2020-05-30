@@ -8,6 +8,7 @@ use App\Http\Requests\BackEnd\Requests\Store;
 use App\Http\Requests\BackEnd\Requests\Update;
 use App\Http\Resources\RequestsItems\ItemRequest;
 use App\Http\Resources\RequestsItems\ItemRequestDetails;
+use App\Models\Item;
 use App\Models\QuestionResponse;
 use App\Models\RequestItems;
 use App\Models\User;
@@ -38,6 +39,11 @@ class ItemsRequests extends ApiHome
         )->count();
         if($reqNum>0){
             return $this->sendError('You Already Requested this Item So You can not make Request again ',404);
+        }
+        $userCheck=Item::find($item_id)->user->id;
+//        dd($userCheck,auth()->user()->id);
+        if(auth()->user()->id===$userCheck){
+            return $this->sendError('This Item IS Uploaded By You So you can nor Request It',404);
         }
         $requestArray=[
             'user_id' => auth()->user()->id,
@@ -102,6 +108,7 @@ class ItemsRequests extends ApiHome
             'Request Updated Successfully');
 
     }
+
     public function indexWithFilter(Request $request){
         if($request->get('filter')==''||$request->get('filter')==null){
             return ItemRequest::collection(

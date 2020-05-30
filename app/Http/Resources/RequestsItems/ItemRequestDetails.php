@@ -18,6 +18,7 @@ class ItemRequestDetails extends JsonResource
             'name'          =>$this->name,
             'description'   =>$this->des,
             'status'  =>$this->status,
+            'item_id' =>$this->item_id,
             'created_at'    =>$this->created_at,
             'AllQuestions'=> $AllQuestions
         ];
